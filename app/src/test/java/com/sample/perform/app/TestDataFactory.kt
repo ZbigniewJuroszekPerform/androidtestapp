@@ -14,6 +14,11 @@ object  TestDataFactory{
         return Response(number.toString(),makeArticleItems(number))
     }
 
+
+    fun makeResponseEmptyList(number: Int): Response {
+        return Response(number.toString(), emptyList())
+    }
+
     fun makeArticleItems(number: Int): List<ArticlesItem>{
         var articleItems = ArrayList<ArticlesItem>()
         for (i in  0..number.dec()){
