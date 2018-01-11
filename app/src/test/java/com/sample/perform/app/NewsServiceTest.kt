@@ -23,15 +23,6 @@ class NewsServiceTest {
             systemUnderTest = DataManager(mockNewsServiceApi)
         }
 
- /*   @Test
-    fun checkIfEndpointHasCorrectBaseUrl (){
-        val urlCaptor = argumentCaptor<String>()
-        whenever(mockNewsServiceApi.getNews(urlCaptor.capture()))
-                .thenReturn(Observable.just(TestDataFactory.makeResponseList(5)))
-        val newsObserver = systemUnderTest.getNews().test()
-        assertEquals("http://omnisport-article.performfeeds.com/",urlCaptor.firstValue)
-    }*/
-
    @Test
     fun loadAllNews (){
        val newsObserver = systemUnderTest.getNews().test()
@@ -46,5 +37,15 @@ class NewsServiceTest {
         val newsObserver = systemUnderTest.getNews().test()
         newsObserver.assertNotCompleted()
     }
+
+    /*   @Test
+   fun checkIfEndpointHasCorrectBaseUrl (){
+       val urlCaptor = argumentCaptor<String>()
+       whenever(mockNewsServiceApi.getNews(urlCaptor.capture()))
+               .thenReturn(Observable.just(TestDataFactory.makeResponseList(5)))
+       val newsObserver = systemUnderTest.getNews().test()
+       assertEquals("http://omnisport-article.performfeeds.com/",urlCaptor.firstValue)
+   }*/
+
 
 }

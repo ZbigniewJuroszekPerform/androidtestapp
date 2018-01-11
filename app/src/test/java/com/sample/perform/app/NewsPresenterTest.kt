@@ -25,18 +25,11 @@ class NewsPresenterTest {
 
     @Rule @JvmField
     val overrideSchedulersRule = RxSchedulersOverrideRule()
-
     @Mock
     lateinit var  mockNewsMvpView: NewsContract.View
 
-
     lateinit var  mockDataManager: DataManager
-
     private  val mockNewsServiceApi : NewsRetrofitApi = mock()
-    lateinit var mockDatamanager: DataManager
-
-   // private  val mockNewsServiceApi : NewsRetrofitApi = mock()
-
     lateinit var newsPresenter: NewsPresenter
 
     @Before

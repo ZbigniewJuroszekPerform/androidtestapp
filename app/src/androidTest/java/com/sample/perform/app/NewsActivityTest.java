@@ -6,7 +6,6 @@ import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.sample.perform.app.ui.news.NewsActivity;
-import com.sample.perform.app.utli.RecyclerViewMatcher;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -25,14 +24,11 @@ public class NewsActivityTest  {
 
     private static final int ITEM_POSITION = 2;
 
-    private static String headline = "Seahawks reportedly fire OC Darrell Bevell after 7 seasons";
+    private static String headline = "Paul sparks fireworks after win over Trail Blazers, Clippers stun Warriors";
 
     @Rule
     public ActivityTestRule<NewsActivity> activityTestRule = new ActivityTestRule<>(NewsActivity.class);
 
-    public static RecyclerViewMatcher withRecyclerView(final int recyclerViewId) {
-        return new RecyclerViewMatcher(recyclerViewId);
-    }
 
     @Test
     public void scrollToItemBelowFold_checkItsText() {
@@ -40,8 +36,5 @@ public class NewsActivityTest  {
                 .perform(RecyclerViewActions.actionOnItemAtPosition(ITEM_POSITION, click()));
         onView(withText(headline)).check(matches(isDisplayed()));
     }
-    @Test
-    public void itemInMiddleOfList_hasSpecialText() {}
-
 
 }
